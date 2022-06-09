@@ -1,0 +1,26 @@
+<div *ngFor="let character of articulos">
+  <div *ngIf="character.id == idCharacter">
+    <div class="card m-5" style="width: 18rem">
+      <img
+        class="card-img-top mt-2"
+        src="{{ character.image }}"
+        alt="Card image cap of {{ character.name }}"
+      />
+      <div class="card-body">
+        <p class="h5">{{ character.name }}</p>
+        <ul class="list-group">
+          <li class="list-group-item">Status: {{ character.status }}</li>
+          <li class="list-group-item">Species: {{ character.species }}</li>
+          <li class="list-group-item">Gender: {{ character.male }}</li>
+          <li class="list-group-item">Origin: {{ character.origin }}</li>
+          <li class="list-group-item">
+            Current location: {{ character.location }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="m-5">
+      <a routerLink="/characters" class="btn btn-primary">Back</a>
+    </div>
+  </div>
+</div>

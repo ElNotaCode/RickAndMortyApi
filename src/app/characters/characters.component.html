@@ -1,7 +1,7 @@
 <!--TITULO-->
 <h1 class="text-center">Characters Rick & Morty!</h1>
 
-<!--LINEA CON  -->
+<!--CARTA  -->
 <div
   class="row row-cols-1 row-cols-sm-2 m-5"
   *ngIf="articulos != null; else espera"
@@ -19,7 +19,9 @@
     <div class="card-body">
       <h5 class="card-title">{{ character.name }}</h5>
       <p class="card-text"></p>
-      <a href="#" class="btn btn-primary">See more</a>
+      <a routerLink="/characterInfo/{{ character.id }}" class="btn btn-primary"
+        >See more</a
+      >
     </div>
   </div>
 </div>

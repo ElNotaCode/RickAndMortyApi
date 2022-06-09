@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { CharactersComponent } from './characters/characters.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CharacterInfoComponent } from './character-info/character-info.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     HomeComponent,
     CharactersComponent,
+    CharacterInfoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
