@@ -1,27 +1,43 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Characters } from './models/characters.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ArticulosService {
+  baseUrl: string = 'http://localhost:3000/characters';
+
   constructor(private http: HttpClient) {}
 
-  retornar() {
-    return this.http.get('https://rickandmortyapi.com/api/character/1,2,3,4,5');
+  //getAll
+  getAll(): Observable<Characters[]> {
+    return this.http.get<Characters[]>(this.baseUrl);
+  }
+  //c
+  create(data: any): Observable<any> {
+    return this.http.post(this.baseUrl, data);
+  }
+  //r
+  get(id: any): Observable<Characters> {
+    return this.http.get('${this.baseUrl}/${id}');
+  }
+  //u
+  update(id: any, data: any): Observable<any> {
+    return this.http.put('${this.baseUrl}/${id}', data);
+  }
+  //d
+  delete(id: any, data: any): Observable<any> {
+    return this.http.delete('${this.baseUrl}/${id}');
   }
 
-  retornarCinco() {
-    return this.http.get('https://rickandmortyapi.com/api/character/1,2,3,4,5');
+  //d all
+  deleteAll(): Observable<any> {
+    return this.http.delete(this.baseUrl);
   }
-
-  retornarPagina() {
-    return this.http.get(
-      '  //https://rickandmortyapi.com/api/character/?page=1'
-    );
-  }
-
-  retornarPersonaje(id: string) {
-    return this.http.get('https://rickandmortyapi.com/api/character/' + id);
+  //search findByName
+  findByName(name: any): Observable<Characters[]> {
+    return this.http.get<Characters[]>('${this.baseUrl}?title=${title}');
   }
 }

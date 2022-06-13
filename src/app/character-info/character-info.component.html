@@ -1,18 +1,20 @@
 <div class="card m-5" style="width: 18rem">
   <img
     class="card-img-top mt-2"
-    src="{{ character.image }}"
-    alt="Card image cap of {{ character.name }}"
+    src="{{ currentCharacter.image }}"
+    alt="Card image cap of {{ currentCharacter.name }}"
   />
   <div class="card-body">
-    <p class="h5">{{ character.name }}</p>
+    <p class="h5">{{ currentCharacter.name }}</p>
     <ul class="list-group">
-      <li class="list-group-item">Status: {{ character.status }}</li>
-      <li class="list-group-item">Species: {{ character.species }}</li>
-      <li class="list-group-item">Gender: {{ character.gender }}</li>
-      <li class="list-group-item">Origin: {{ character.origin.name }}</li>
+      <li class="list-group-item">Status: {{ currentCharacter.status }}</li>
+      <li class="list-group-item">Species: {{ currentCharacter.species }}</li>
+      <li class="list-group-item">Gender: {{ currentCharacter.gender }}</li>
       <li class="list-group-item">
-        Current location: {{ character.location.name }}
+        Origin: {{ currentCharacter.origin.name }}
+      </li>
+      <li class="list-group-item">
+        Current location: {{ currentCharacter.location.name }}
       </li>
     </ul>
   </div>

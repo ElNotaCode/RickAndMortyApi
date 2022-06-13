@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.articulosService
-      .retornarCinco()
+      .getAll()
       .subscribe((result) => (this.articulos = result));
   }
 }

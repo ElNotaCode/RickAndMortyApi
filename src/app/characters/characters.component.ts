@@ -13,7 +13,7 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit() {
     this.articulosService
-      .retornarPagina()
+      .getAll()
       .subscribe((result) => (this.articulos = result));
   }
 }

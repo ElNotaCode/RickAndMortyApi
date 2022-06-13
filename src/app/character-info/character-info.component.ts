@@ -8,6 +8,9 @@ import { ArticulosService } from '../articulos.service';
   styleUrls: ['./character-info.component.css'],
 })
 export class CharacterInfoComponent implements OnInit {
+  idCharacter: string = '';
+  currentCharacter: any;
+
   constructor(
     private route: ActivatedRoute,
     private articulosService: ArticulosService
@@ -16,13 +19,19 @@ export class CharacterInfoComponent implements OnInit {
     console.log(this.idCharacter);
   }
 
-  idCharacter: string = '';
-
   ngOnInit(): void {
-    this.articulosService
-      .retornarPersonaje(this.idCharacter)
-      .subscribe((result) => (this.character = result));
+    this.getCharacter(this.route.snapshot.paramMap.get('id'));
   }
 
-  character: any = '';
+  getCharacter(id: string | null): void {
+    this.articulosService.get(id).subscribe(
+      (character) => {
+        this.currentCharacter = character;
+        console.log(character);
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+  }
 }

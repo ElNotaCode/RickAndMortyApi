@@ -499,6 +499,16 @@
       "origin": "esse est quis",
       "location": "iusto nesciunt totam",
       "image": "http://placeimg.com/640/480/animals"
+    },
+    {
+      "name": "Cool Rick",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Earth (K-83)",
+      "location": "Citadel of Ricks",
+      "image": "https://rickandmortyapi.com/api/character/avatar/72.jpeg",
+      "id": 50
     }
   ]
 }
