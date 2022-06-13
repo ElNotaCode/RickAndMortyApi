@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticulosService } from '../articulos.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  articulos: any = null;
 
-  constructor() { }
+  constructor(private articulosService: ArticulosService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.articulosService
+      .retornarCinco()
+      .subscribe((result) => (this.articulos = result));
   }
-
 }
